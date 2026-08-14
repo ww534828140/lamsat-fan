@@ -1,0 +1,42 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-737186f2-909e-4e0b-a29a-3e76fbeb9384)
+[8s] Status: Analyzing video content with AI...
+[25s] Status: Analysis completed
+[25s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_1000255949_analysis_20260814_130401.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+بناءً على تحليل فيديو تقرير PageSpeed Insights، إليك تفاصيل قسم الأداء (Performance):
+
+### **مقاييس الأداء الأساسية:**
+*   **إجمالي وقت الحظر (TBT):** 510 مللي ثانية (باللون البرتقالي - يحتاج تحسين).
+*   **أكبر محتوى مرئي (LCP):** 4.4 ثانية (باللون الأحمر - ضعيف).
+*   **أول محتوى مرئي (FCP):** 1.7 ثانية (باللون البرتقالي).
+*   **متغيرات التصميم التراكمية (CLS):** 0 (باللون الأخضر - ممتاز).
+*   **مؤشر السرعة (Speed Index):** 4.3 ثانية.
+
+*ملاحظة: لم يظهر رقم درجة الأداء الإجمالية في الفيديو، ولكن بناءً على المقاييس، فهي تقع في النطاق المنخفض إلى المتوسط.*
+
+### **الفرص والموارد المحددة:**
+1.  **طلبات حظر العرض (Render-blocking resources):**
+    *   **التوفير المحتمل:** 160 مللي ثانية.
+    *   **الموارد المتأثرة:**
+        *   `manus.space`
+        *   ملف CSS: `lamsatfan...assets/index-Bol7k9e4.css` (من نطاق `b94urww.manus.space`).
+
+2.  **ميزات JavaScript القديمة (Legacy JavaScript):**
+    *   **التوفير المحتمل:** 8 كيبيبايت.
+    *   **الموارد المتأثرة:**
+        *   `manuscdn.com` (ملفات `spaceEdit...js`).
+        *   `manus.space` (ملفات `index-3P7lsCND.js`).
+
+3.  **الحد من محتوى JavaScript غير المستخدم:**
+    *   **التوفير المحتمل:** 98 كيبيبايت.
+    *   **الموارد المتأثرة:** نفس موارد JavaScript المذكورة أعلاه التابعة لنطاقات `manuscdn.com` و `manus.space`.
+
+### **تحليل النطاق (Domain):**
+التقرير يقيس أداء موقع يقع تحت النطاق **`manus.space`** (تحديداً الرابط الفرعي `lamsatfan-b94urww.manus.space`)؛ حيث أن جميع الموارد المسؤولة عن تأخير الأداء والفرص المتاحة تتبع لهذا النطاق ونطاق توزيع المحتوى الخاص به `manuscdn.com`.
+
+**خلاصة:** الموقع يعاني بشكل أساسي من بطء في تحميل أكبر عنصر مرئي (LCP) ووقت حظر طويل نسبياً بسبب ملفات JavaScript و CSS التي تعيق العرض الأول.
