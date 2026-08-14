@@ -7,9 +7,7 @@ import { useState } from "react";
 
 const phone = "0567290793";
 const internationalPhone = "+966567290793";
-const whatsappMessage = encodeURIComponent("السلام عليكم، أريد الاستفسار عن خدمات الدهانات والديكورات في جدة.");
-// رابط api.whatsapp.com يفتح واتساب أو WhatsApp Web كحل احتياطي بدل إظهار رسالة أن التطبيق غير موجود.
-const whatsapp = `https://api.whatsapp.com/send?phone=966567290793&text=${whatsappMessage}`;
+const whatsapp = "https://wa.me/966567290793";
 
 const services = [
   { icon: <Paintbrush size={25} />, title: "دهانات داخلية", text: "تشطيبات مرتبة وألوان هادئة أو جريئة، حسب ذوقك وطبيعة المكان." },
