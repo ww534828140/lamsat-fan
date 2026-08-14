@@ -6,7 +6,10 @@ import { ArrowLeft, ArrowUpLeft, Brush, Check, ChevronDown, Clock3, Home as Home
 import { useState } from "react";
 
 const phone = "0567290793";
-const whatsapp = "https://wa.me/966567290793";
+const internationalPhone = "+966567290793";
+const whatsappMessage = encodeURIComponent("السلام عليكم، أريد الاستفسار عن خدمات الدهانات والديكورات في جدة.");
+// رابط api.whatsapp.com يفتح واتساب أو WhatsApp Web كحل احتياطي بدل إظهار رسالة أن التطبيق غير موجود.
+const whatsapp = `https://api.whatsapp.com/send?phone=966567290793&text=${whatsappMessage}`;
 
 const services = [
   { icon: <Paintbrush size={25} />, title: "دهانات داخلية", text: "تشطيبات مرتبة وألوان هادئة أو جريئة، حسب ذوقك وطبيعة المكان." },
@@ -24,18 +27,18 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div dir="rtl" className="min-h-screen overflow-x-hidden bg-[#f7f3ec] text-[#182b2a]">
-      <div className="top-strip"><div className="container flex items-center justify-between gap-4"><span>خدمات دهانات وديكورات في جدة</span><a href={`tel:${phone}`} className="hidden items-center gap-2 sm:flex"><Phone size={14} /> {phone}</a></div></div>
+      <div className="top-strip"><div className="container flex items-center justify-between gap-4"><span>خدمات دهانات وديكورات في جدة</span><a href={`tel:${internationalPhone}`} className="hidden items-center gap-2 sm:flex"><Phone size={14} /> {phone}</a></div></div>
       <header className="site-header">
         <div className="container flex items-center justify-between py-5">
           <a href="#home" className="brand" aria-label="لمسة فن - الصفحة الرئيسية"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة</small></span></a>
           <nav className={`${menuOpen ? "flex" : "hidden"} mobile-nav md:flex`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
-          <div className="hidden items-center gap-3 md:flex"><a href={`tel:${phone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
+          <div className="hidden items-center gap-3 md:flex"><a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
           <button className="menu-button md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
       </header>
 
       <main id="home">
-        <section className="hero-section"><div className="container hero-grid"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot"></span> لمسة تغيّر شكل المكان</div><h1>لون يليق<br /><em>ببيتك.</em></h1><p className="hero-lead">دهانات وديكورات تُنفّذ بعناية في جدة، من اختيار اللون إلى آخر لمسة على الجدار.</p><div className="hero-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="primary-button"><MessageCircle size={20} /> احجز عبر واتساب <ArrowLeft size={18} /></a><a href={`tel:${phone}`} className="text-button"><Phone size={17} /> أو اتصل مباشرة</a></div><div className="hero-note"><Check size={16} /> معاينة واتفاق واضح قبل البداية</div></div><div className="hero-visual"><img src="/manus-storage/lamsat-hero_3ee283c0.jpg" alt="دهانات وديكورات داخلية بلمسة فنية" /><div className="hero-caption"><span className="caption-line"></span><span>تفاصيل تصنع الفرق</span></div><div className="floating-stamp"><span>جدة</span><small>نخدمك<br />بكل عناية</small></div></div></div></section>
+        <section className="hero-section"><div className="container hero-grid"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot"></span> لمسة تغيّر شكل المكان</div><h1>لون يليق<br /><em>ببيتك.</em></h1><p className="hero-lead">دهانات وديكورات تُنفّذ بعناية في جدة، من اختيار اللون إلى آخر لمسة على الجدار.</p><div className="hero-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="primary-button"><MessageCircle size={20} /> احجز عبر واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="text-button"><Phone size={17} /> أو اتصل مباشرة</a></div><div className="hero-note"><Check size={16} /> معاينة واتفاق واضح قبل البداية</div></div><div className="hero-visual"><img src="/manus-storage/lamsat-hero_3ee283c0.jpg" alt="دهانات وديكورات داخلية بلمسة فنية" /><div className="hero-caption"><span className="caption-line"></span><span>تفاصيل تصنع الفرق</span></div><div className="floating-stamp"><span>جدة</span><small>نخدمك<br />بكل عناية</small></div></div></div></section>
 
         <section className="trust-bar"><div className="container trust-grid"><div className="trust-intro"><span>لماذا لمسة فن؟</span><strong>شغل مرتب.<br />نتيجة تفرحك.</strong></div><div className="trust-item"><span className="trust-icon"><Clock3 size={22} /></span><div><strong>موعد واضح</strong><p>نلتزم بالوقت المتفق عليه</p></div></div><div className="trust-item"><span className="trust-icon"><HomeIcon size={22} /></span><div><strong>نظافة في التنفيذ</strong><p>نحمي المكان ونرتبه بعد الشغل</p></div></div><div className="trust-item"><span className="trust-icon"><Star size={22} /></span><div><strong>لمسة من ذوقك</strong><p>نسمع رغبتك قبل أن نقترح</p></div></div></div></section>
 
@@ -45,11 +48,11 @@ export default function Home() {
 
         <section id="work" className="section-padding work-section"><div className="container"><div className="work-heading"><div><span className="section-kicker">رحلة بسيطة</span><h2>خلّ البداية<br /><span>علينا.</span></h2></div><p>كل ما نحتاجه صورة للمكان وفكرة بسيطة في بالك. والباقي نرتبه معك.</p></div><div className="steps-grid">{steps.map(step => <div className="step" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div></div></section>
 
-        <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تغيّر المكان؟</span><h2>أرسل لنا صورة،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا الآن وخذ رأيًا سريعًا يناسب مساحتك في جدة.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${phone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
+        <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تغيّر المكان؟</span><h2>أرسل لنا صورة،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا الآن وخذ رأيًا سريعًا يناسب مساحتك في جدة.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-inner"><a href="#home" className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة</small></span></a><p>نلوّن المساحات بما يشبهك.</p><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> واتساب</a><a href={`tel:${phone}`}><Phone size={16} /> اتصال</a><a href="#home"><ArrowUpLeft size={16} /> للأعلى</a></div></div><div className="container copyright"><span>© {new Date().getFullYear()} لمسة فن. جميع الحقوق محفوظة.</span><span className="location"><MapPin size={14} /> جدة، المملكة العربية السعودية</span></div></footer>
-      <div className="floating-contact"><a href={whatsapp} target="_blank" rel="noreferrer" aria-label="تواصل عبر واتساب"><MessageCircle size={25} /></a><a href={`tel:${phone}`} aria-label="اتصال مباشر"><Phone size={22} /></a></div>
+      <footer className="site-footer"><div className="container footer-inner"><a href="#home" className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة</small></span></a><p>نلوّن المساحات بما يشبهك.</p><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> واتساب</a><a href={`tel:${internationalPhone}`}><Phone size={16} /> اتصال</a><a href="#home"><ArrowUpLeft size={16} /> للأعلى</a></div></div><div className="container copyright"><span>© {new Date().getFullYear()} لمسة فن. جميع الحقوق محفوظة.</span><span className="location"><MapPin size={14} /> جدة، المملكة العربية السعودية</span></div></footer>
+      <div className="floating-contact"><a href={whatsapp} target="_blank" rel="noreferrer" aria-label="تواصل عبر واتساب"><MessageCircle size={25} /></a><a href={`tel:${internationalPhone}`} aria-label="اتصال مباشر"><Phone size={22} /></a></div>
     </div>
   );
 }
