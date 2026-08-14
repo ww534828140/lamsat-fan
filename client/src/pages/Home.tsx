@@ -24,14 +24,14 @@ const steps = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div dir="rtl" className="min-h-screen overflow-x-hidden bg-[#f7f3ec] text-[#182b2a]">
-      <div className="top-strip"><div className="container flex items-center justify-between gap-4"><span>خدمات دهانات وديكورات في جدة</span><a href={`tel:${internationalPhone}`} className="hidden items-center gap-2 sm:flex"><Phone size={14} /> {phone}</a></div></div>
+    <div dir="rtl" className="site-root">
+      <div className="top-strip"><div className="container top-strip-inner"><span>خدمات دهانات وديكورات في جدة</span><a href={`tel:${internationalPhone}`} className="top-phone"><Phone size={14} /> {phone}</a></div></div>
       <header className="site-header">
-        <div className="container flex items-center justify-between py-5">
+        <div className="container header-inner">
           <a href="#home" className="brand" aria-label="لمسة فن - الصفحة الرئيسية"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة</small></span></a>
-          <nav className={`${menuOpen ? "flex" : "hidden"} mobile-nav md:flex`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
-          <div className="hidden items-center gap-3 md:flex"><a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
-          <button className="menu-button md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>{menuOpen ? <X /> : <Menu />}</button>
+          <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
+          <div className="desktop-actions"><a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
+          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
       </header>
 

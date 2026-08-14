@@ -1,0 +1,46 @@
+Starting video analysis...
+Submitting video analysis task...
+Task submitted (ID: video-analysis-cd5f9954-f387-45d0-a795-ee5a2e39ce38)
+[8s] Status: Analyzing video content with AI...
+[30s] Status: Analysis completed
+[30s] Analysis completed!
+Full analysis result saved to: /home/ubuntu/video_1000255941_analysis_20260814_125044.md
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Analysis result:
+
+بناءً على تحليل فيديو تقرير PageSpeed Insights، إليك التفاصيل المستخرجة:
+
+### **أولاً: الدرجات الظاهرة**
+1.  **الأداء (Performance):** 83
+2.  **إمكانية الوصول (Accessibility):** 100
+*(ملاحظة: درجتا "أفضل الممارسات" و"تحسين محركات البحث" لم تظهرا بشكل رقمي صريح في الفيديو خلال التمرير).*
+
+---
+
+### **ثانياً: التنبيهات، العناصر المتأثرة، والإصلاحات التقنية**
+
+#### **1. طلبات حظر العرض (Eliminate render-blocking resources)**
+*   **العناصر المتأثرة:** 
+    *   رابط الطرف الأول `manus.space` (تأخير 340 ملي ثانية).
+    *   ملف التنسيق `index-dVJB08Z6.css` (تأخير 340 ملي ثانية).
+*   **الإصلاح التقني:** استخدام وسم `<link rel="preload">` للملفات الهامة، وتأجيل تحميل ملفات CSS غير الضرورية عبر إضافة الخاصية `media="print" onload="this.media='all'"`، أو تضمين الأنماط الحرجة (Critical CSS) مباشرة في وسم `<style>` داخل الرأس.
+
+#### **2. شجرة اعتمادية الشبكة (Avoid chaining critical requests)**
+*   **العناصر المتأثرة:** سلسلة الطلبات التي تبدأ بملف `index-dVJB08Z6.css` وتؤثر على وقت تحميل الصفحة.
+*   **الإصلاح التقني:** تقليل عدد الموارد المطلوبة في البداية، ضغط أحجام الملفات، واستخدام تقنية HTTP/2 أو HTTP/3 لتمكين تحميل الموارد بالتوازي وتقليل وقت الانتظار.
+
+#### **3. المصادر المتصلة مسبقاً (Preconnect to required origins)**
+*   **العناصر المتأثرة:** اقتراح عام لتحسين سرعة الاتصال بالمجالات الخارجية قبل طلب الموارد منها.
+*   **الإصلاح التقني:** إضافة وسم `<link rel="preconnect" href="https://example.com">` في قسم `<head>` للمجالات الخارجية التي يعتمد عليها الموقع، مما يقلل من وقت مصافحة TCP ووقت اتصال TLS.
+
+#### **4. ميزات JavaScript القديمة (Legacy JavaScript)**
+*   **العناصر المتأثرة:** ملفات برمجية مستضافة على `manuscdn.com` (توفير محتمل 8 كيبيبايت).
+*   **الإصلاح التقني:** تحديث إعدادات أدوات البناء (مثل Babel) لاستهداف المتصفحات الحديثة فقط (ES6+)، وتجنب شحن "Polyfills" غير ضرورية للمتصفحات التي لا تحتاجها.
+
+#### **5. الحد من محتوى JavaScript غير المستخدم (Reduce unused JavaScript)**
+*   **العناصر المتأثرة:** ملفات من `manus.space` و `lamsatfan-assets` و `manuscdn.com` (توفير إجمالي 160 كيبيبايت).
+*   **الإصلاح التقني:** تطبيق تقنية تقسيم الكود (Code Splitting) لتحميل الأكواد اللازمة فقط لكل صفحة، واستخدام خاصية "Tree Shaking" لحذف الدوال البرمجية غير المستخدمة نهائياً من الحزم النهائية.
+
+#### **6. تجنب سلسلة المهام الرئيسية الطويلة (Avoid long main-thread tasks)**
+*   **العناصر المتأثرة:** مهام برمجية مرتبطة بملفات `spaceEdit...js` استغرقت ما بين 3,780 إلى 3,950 ملي ثانية.
+*   **الإصلاح التقني:** تقسيم المهام الكبيرة إلى أجزاء أصغر (Task Splitting) باستخدام `setTimeout` أو `requestIdleCallback` لمنع تجمد المتصفح، أو نقل العمليات الحسابية الثقيلة إلى "Web Workers".
