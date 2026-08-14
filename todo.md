@@ -12,3 +12,7 @@
 - [ ] اختبار الروابط في نسخة الهاتف وسطح المكتب.
 - [ ] فحص اسم ومحتوى ملف تحقق Google Search Console المرفق.
 - [ ] وضع ملف التحقق في جذر الموقع واختبار الرابط العام.
+- [x] Confirm the live domain and inspect current production HTML, robots.txt, and asset delivery.
+- [x] Reduce mobile LCP/TBT through image preload, lazy loading, font loading, and JavaScript reduction.
+- [x] Fix viewport accessibility, contrast, metadata, robots.txt, and security-related headers where supported.
+- [x] Rebuild and verify mobile screenshots plus TypeScript/production build.

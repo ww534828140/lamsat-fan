@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://lamsatfan-b94urwvv.manus.space/sitemap.xml
