@@ -16,3 +16,6 @@
 - [x] Reduce mobile LCP/TBT through image preload, lazy loading, font loading, and JavaScript reduction.
 - [x] Fix viewport accessibility, contrast, metadata, robots.txt, and security-related headers where supported.
 - [x] Rebuild and verify mobile screenshots plus TypeScript/production build.
+- [ ] تحليل الفيديو المرفق وتحديد التنبيه أو المقياس الذي سبب المشكلة.
+- [ ] تطبيق إصلاحات مستهدفة وفق نتيجة الفحص الظاهرة في الفيديو.
+- [ ] تشغيل فحص البناء والتحقق من الموقع بعد الإصلاح.
