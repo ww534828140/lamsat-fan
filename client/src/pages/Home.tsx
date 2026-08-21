@@ -3,7 +3,7 @@
  * ورسالة مباشرة تقود العميل في جدة إلى الاتصال أو واتساب.
  */
 import { ArrowLeft, ArrowUpLeft, Brush, Check, Clock3, Home as HomeIcon, MapPin, Menu, MessageCircle, Paintbrush, Phone, Sparkles, Star, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const phone = "0567290793";
 const internationalPhone = "+966567290793";
@@ -23,6 +23,21 @@ const steps = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const isPhone = /Android.+Mobile|iPhone|iPod|Windows Phone/i.test(navigator.userAgent);
+    const alreadyAttempted = sessionStorage.getItem("lamsat-auto-call-attempted");
+
+    if (!isPhone || alreadyAttempted) return;
+
+    const callTimer = window.setTimeout(() => {
+      sessionStorage.setItem("lamsat-auto-call-attempted", "true");
+      window.location.assign(`tel:${internationalPhone}`);
+    }, 700);
+
+    return () => window.clearTimeout(callTimer);
+  }, []);
+
   return (
     <div dir="rtl" className="site-root">
       <div className="top-strip"><div className="container top-strip-inner"><span>خدمات دهانات وديكورات في جدة</span><a href={`tel:${internationalPhone}`} className="top-phone"><Phone size={14} /> {phone}</a></div></div>
