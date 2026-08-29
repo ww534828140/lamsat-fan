@@ -21,3 +21,7 @@ The latest video still reported LCP 4.4s and TBT 510ms and named the server-inje
 On 2026-08-26, the custom domain `lamsatfan.lol` resolved through Google Public DNS to `104.18.26.246`, presented a valid Google Trust Services certificate for the hostname, and returned HTTP 200 for `sitemap.txt` with `text/plain; charset=utf-8` and the canonical URL as its only line. Five consecutive Googlebot-identified requests also returned HTTP 200. The first deployment of newly added sitemap paths briefly returned maintenance/404 responses before propagation completed, which can explain earlier Search Console fetch attempts. The public Rich Results Test form loaded but its test action could not be initiated in the sandbox browser.
 
 The public Google Rich Results Test was then completed against `https://lamsatfan.lol/` using the Google Inspection Tool smartphone agent. Google reported "Crawled successfully" at 2026-08-25 23:01:08 UTC and detected two valid structured-data items (LocalBusiness and Organization). This independently confirms that Google's public crawler infrastructure can reach and process the published page; the repeated Search Console sitemap error is therefore not evidence that the website itself is inaccessible to Google.
+
+## اختبار إلغاء الاتصال التلقائي
+
+بعد إزالة تأثير `useEffect` الذي كان يستدعي `tel:` عند تحميل الجوال، فتحت الصفحة المنشورة ثم اختبرت زر «أو اتصل مباشرة». بقيت الصفحة الرئيسية مفتوحة عند الفتح، ولم يحدث تحويل تلقائي؛ رابط الاتصال ظاهر كـ `tel:+966567290793` ويُفعّل من خلال النقر على الزر فقط. فحص TypeScript وبناء الإنتاج نجحا.
