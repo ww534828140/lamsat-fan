@@ -4,6 +4,7 @@
  */
 import { ArrowLeft, ArrowUpLeft, Brush, Check, Clock3, Home as HomeIcon, MapPin, Menu, MessageCircle, Paintbrush, Phone, Sparkles, Star, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 const phone = "0567290793";
 const internationalPhone = "+966567290793";
@@ -40,6 +41,13 @@ const regionalServices = [
 ];
 
 export default function Home() {
+  // The useAuth hook provides authentication state.
+  // To implement login/logout, call logout(), or start login from an event
+  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
+  // startLogin() during render (no href={startLogin()}) — it mints a one-time
+  // nonce cookie and must run only at the moment of navigation.
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
