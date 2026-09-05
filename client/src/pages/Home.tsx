@@ -57,7 +57,7 @@ export default function Home() {
       <header className="site-header">
         <div className="container header-inner">
           <a href="#home" className="brand" aria-label="لمسة فن - الصفحة الرئيسية"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة والرياض</small></span></a>
-          <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#riyadh-services" onClick={() => setMenuOpen(false)}>خدمات الرياض</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
+          <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#riyadh-services" onClick={() => setMenuOpen(false)}>خدمات الرياض</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#gallery-riyadh" onClick={() => setMenuOpen(false)}>أعمال الرياض</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
           <div className="desktop-actions"><a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
           <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
@@ -76,6 +76,36 @@ export default function Home() {
         <section id="approach" className="approach-section"><div className="container approach-grid"><div className="approach-image"><img src={livingRoomImage} alt="جدار بلمسة ديكور عصرية" width="760" height="570" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw" /><div className="color-swatches"><span style={{background: "#c88669"}}></span><span style={{background: "#d7c2a2"}}></span><span style={{background: "#244d4b"}}></span><span style={{background: "#f5eee3"}}></span></div></div><div className="approach-copy"><span className="section-kicker">أسلوبنا في الشغل</span><h2>ذوقك أولًا،<br /><span>والتفاصيل علينا.</span></h2><p>الدهان ليس مجرد لون. هو إحساس الغرفة، طريقة انعكاس الضوء، والفرق الذي تشعر به كل يوم. لذلك نبدأ بالاستماع، ثم نرتب الخطوات وننفذ بهدوء.</p><div className="approach-list"><div><span className="list-check"><Check size={16} /></span><span><strong>نقترح بوضوح</strong><small>بدون تعقيد أو خيارات مربكة.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>ننّفذ بنظافة</strong><small>نحافظ على أثاثك وأرضياتك.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>نترك أثرًا جميلًا</strong><small>تشطيب يبان من أول نظرة.</small></span></div></div></div></div></section>
 
         <section id="work" className="section-padding work-section"><div className="container"><div className="work-heading"><div><span className="section-kicker">رحلة بسيطة</span><h2>خلّ البداية<br /><span>علينا.</span></h2></div><p>كل ما نحتاجه صورة للمكان وفكرة بسيطة في بالك. والباقي نرتبه معك.</p></div><div className="steps-grid">{steps.map(step => <div className="step" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div></div></section>
+
+        <section id="gallery-riyadh" className="section-padding gallery-section">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <span className="section-kicker">معرض الأعمال</span>
+                <h2>ديكورات الرياض<br /><span>نماذج تصاميم وإلهام لبيتك.</span></h2>
+              </div>
+              <p>نستعرض هنا نماذج من أحدث صيحات الديكور والدهانات العالمية التي ننفذها باحترافية، حيث يحرص معلم ديكورات الرياض على محاكاة هذه التصاميم بأعلى جودة.</p>
+            </div>
+            <div className="gallery-grid">
+              <div className="gallery-item">
+                <img src="https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تنفيذ دهانات داخلية عصرية" loading="lazy" decoding="async" />
+                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
+              </div>
+              <div className="gallery-item">
+                <img src="https://images.pexels.com/photos/6492397/pexels-photo-6492397.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تركيب بديل رخام وشيبورد" loading="lazy" decoding="async" />
+                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
+              </div>
+              <div className="gallery-item">
+                <img src="https://images.pexels.com/photos/7061662/pexels-photo-7061662.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تشطيبات وديكورات جدران راقية" loading="lazy" decoding="async" />
+                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
+              </div>
+              <div className="gallery-item">
+                <img src="https://images.pexels.com/photos/6758532/pexels-photo-6758532.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تصميم خلفيات شاشة TV" loading="lazy" decoding="async" />
+                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تغيّر المكان؟</span><h2>أرسل لنا صورة،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا الآن وخذ رأيًا سريعًا يناسب مساحتك في جدة أو الرياض.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
       </main>
