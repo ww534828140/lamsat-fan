@@ -1,116 +1,175 @@
-/*
- * أسلوب الصفحة: دفء الحرفة الراقية — تكوين تحريري غير متماثل، ألوان طينية وفيروزية،
- * ورسالة مباشرة تقود العميل في جدة والرياض إلى الاتصال أو واتساب.
- */
-import { ArrowLeft, ArrowUpLeft, Brush, Check, Clock3, Home as HomeIcon, MapPin, Menu, MessageCircle, Paintbrush, Phone, Sparkles, Star, X } from "lucide-react";
+import {
+  ArrowLeft,
+  BadgeCheck,
+  Building2,
+  Check,
+  ChevronLeft,
+  Clock3,
+  LayoutPanelTop,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Phone,
+  Printer,
+  ScanLine,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Target,
+  X,
+} from "lucide-react";
 import { useState } from "react";
-import { useAuth } from "@/_core/hooks/useAuth";
 
-const phone = "0567290793";
-const internationalPhone = "+966567290793";
-const whatsapp = "https://wa.me/966567290793";
-const heroImage = "https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=720";
-const livingRoomImage = "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=760";
+const phone = "0583099153";
+const internationalPhone = "+966583099153";
+const whatsapp = "https://wa.me/966583099153";
+const heroImage = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80";
 
 const services = [
-  { icon: <Paintbrush size={25} />, title: "دهانات داخلية", text: "تشطيبات مرتبة وألوان هادئة أو جريئة، حسب ذوقك وطبيعة المكان." },
-  { icon: <Brush size={25} />, title: "ديكورات جدران", text: "بدائل راقية للدهان التقليدي: ملمس، خطوط، فواصل ولمسات ترفع شكل الغرفة." },
-  { icon: <Sparkles size={25} />, title: "تجديد وتشطيب", text: "نجهز السطح، نعالج العيوب وننفذ اللمسة الأخيرة بعناية من أول طبقة لآخر تفصيل." },
+  {
+    icon: <Building2 size={27} />,
+    title: "اللوحات والواجهات الخارجية",
+    text: "نصمم ونركب واجهات كلادنج عصرية، مقاومة للعوامل الجوية، تمنح نشاطك حضورًا واضحًا من أول نظرة.",
+  },
+  {
+    icon: <Sparkles size={27} />,
+    title: "الحروف البارزة والزنكور",
+    text: "حروف مضيئة وغير مضيئة، وحروف زنكور بجودة متينة وتصاميم تناسب هوية متجرك أو منشأتك.",
+  },
+  {
+    icon: <Star size={27} />,
+    title: "حروف الاستيل الذهبي والفضي",
+    text: "تفاصيل فاخرة تضيف الرقي للواجهة وتبرز اسم علامتك بخامة لامعة وتشطيب يلفت الانتباه.",
+  },
+  {
+    icon: <Printer size={27} />,
+    title: "الطباعة الرقمية والبنرات",
+    text: "بنرات وفليكس بطباعة دقيقة وألوان واضحة للمحلات، الفعاليات، المناسبات والحملات الإعلانية.",
+  },
+  {
+    icon: <ScanLine size={27} />,
+    title: "الاستيكرات والواجهات الزجاجية",
+    text: "استيكرات للزجاج والسيارات والمنتجات، بخيارات شفافة أو مطفية وقياسات تنفذ حسب طلبك.",
+  },
+  {
+    icon: <LayoutPanelTop size={27} />,
+    title: "رول أب وأكريليك للمعارض",
+    text: "تجهيز متكامل للمعارض والفعاليات: رول أب، بوب أب ولوحات أكريليك أنيقة للمكاتب والمتاجر.",
+  },
+];
+
+const benefits = [
+  { icon: <BadgeCheck size={22} />, title: "دقة عالية", text: "من الفكرة والتصميم إلى التركيب النهائي." },
+  { icon: <Clock3 size={22} />, title: "التزام بالمواعيد", text: "خطة واضحة وتسليم في الوقت المتفق عليه." },
+  { icon: <ShieldCheck size={22} />, title: "خامات ممتازة", text: "حلول عملية تعيش وتظهر بجودة عالية." },
 ];
 
 const steps = [
-  { number: "01", title: "أرسل صورة المكان", text: "واتساب سريع بصورة أو فيديو قصير للمساحة التي تريد تجديدها." },
-  { number: "02", title: "نقترح لك الأنسب", text: "نساعدك في اختيار اللون واللمسة المناسبة لطبيعة الجدار وإضاءة الغرفة." },
-  { number: "03", title: "نبدأ التنفيذ", text: "موعد واضح، تجهيز نظيف، وتنفيذ دقيق يترك المكان أجمل مما تخيلت." },
+  { number: "01", title: "أرسل فكرتك", text: "أرسل اسم النشاط أو صورة الموقع والمقاس التقريبي عبر واتساب." },
+  { number: "02", title: "نقترح التصميم", text: "نرتب لك الخامة واللون والشكل المناسب لهوية نشاطك وميزانيتك." },
+  { number: "03", title: "ننفذ ونركب", text: "تنفيذ دقيق وتركيب مرتب لتخرج واجهتك بالشكل الذي يلفت عملاءك." },
 ];
 
-const regionalServices = [
-  "تركيب بديل رخام الرياض",
-  "محلات ورق جدران الرياض",
-  "مقاول ترميم شقق بالرياض",
-  "تركيب شيبورد وتكسيات خشبية",
-  "تصميم خلفيات شاشة TV ديكور",
-  "أعمال عوازل صوتية بالرياض",
-  "بناء غرف سندويش بنل",
-  "ديكورات بالرياض",
-  "شركة تشطيبات في الرياض",
-  "مقاول ديكور داخلي",
-  "دهانات خارجية وداخلية الرياض",
-  "فني جبس بورد بالرياض",
-  "معلم ديكورات الرياض",
+const gallery = [
+  { src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80", alt: "تصميم هوية بصرية ولمسات دعائية عصرية" },
+  { src: "https://images.unsplash.com/photo-1612815154858-60aa4c59e479?auto=format&fit=crop&w=900&q=80", alt: "طباعة رقمية احترافية لمطبوعات إعلانية" },
+  { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80", alt: "لوحة واجهة متجر بتصميم واضح وجذاب" },
+  { src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80", alt: "لوحات أكريليك وتجهيزات مكتبية للعلامات التجارية" },
 ];
 
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div dir="rtl" className="site-root">
-      <div className="top-strip"><div className="container top-strip-inner"><span>خدمات دهانات وديكورات في جدة والرياض</span><a href={`tel:${internationalPhone}`} className="top-phone"><Phone size={14} /> {phone}</a></div></div>
+      <div className="top-strip">
+        <div className="container top-strip-inner">
+          <span>لمسة فن للدعاية والإعلان — نصنع حضور علامتك</span>
+          <a href={`tel:${internationalPhone}`} className="top-phone"><Phone size={14} /> {phone}</a>
+        </div>
+      </div>
+
       <header className="site-header">
         <div className="container header-inner">
-          <a href="#home" className="brand" aria-label="لمسة فن - الصفحة الرئيسية"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة والرياض</small></span></a>
-          <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي"><a href="#services" onClick={() => setMenuOpen(false)}>خدماتنا</a><a href="#riyadh-services" onClick={() => setMenuOpen(false)}>خدمات الرياض</a><a href="#approach" onClick={() => setMenuOpen(false)}>أسلوبنا</a><a href="#work" onClick={() => setMenuOpen(false)}>لمساتنا</a><a href="#gallery-riyadh" onClick={() => setMenuOpen(false)}>أعمال الرياض</a><a href="#contact" onClick={() => setMenuOpen(false)}>تواصل معنا</a></nav>
-          <div className="desktop-actions"><a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a></div>
-          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>{menuOpen ? <X /> : <Menu />}</button>
+          <a href="#home" className="brand" aria-label="لمسة فن للدعاية والإعلان - الصفحة الرئيسية">
+            <span className="brand-mark"><span></span><span></span><span></span></span>
+            <span><strong>لمسة فن</strong><small>للدعاية والإعلان</small></span>
+          </a>
+          <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي">
+            <a href="#services" onClick={closeMenu}>خدماتنا</a>
+            <a href="#signage" onClick={closeMenu}>اللوحات والواجهات</a>
+            <a href="#print" onClick={closeMenu}>الطباعة</a>
+            <a href="#why-us" onClick={closeMenu}>لماذا لمسة فن؟</a>
+            <a href="#work" onClick={closeMenu}>أعمالنا</a>
+            <a href="#contact" onClick={closeMenu}>تواصل معنا</a>
+          </nav>
+          <div className="desktop-actions">
+            <a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a>
+            <a href={whatsapp} target="_blank" rel="noreferrer" className="nav-cta"><MessageCircle size={17} /> واتساب</a>
+          </div>
+          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}>
+            {menuOpen ? <X /> : <Menu />}
+          </button>
         </div>
       </header>
 
       <main id="home">
-        <section className="hero-section"><div className="container hero-grid"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot"></span> لمسة تغيّر شكل المكان</div><h1>لون يليق<br /><em>ببيتك.</em></h1><p className="hero-lead">معلم دهانات وديكورات خبير في جدة والرياض، ننفذ أعمالنا بعناية من اختيار اللون إلى آخر لمسة على الجدار.</p>
-<div className="hero-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="primary-button"><MessageCircle size={20} /> احجز عبر واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="text-button"><Phone size={17} /> أو اتصل مباشرة</a></div><div className="hero-note"><Check size={16} /> معاينة واتفاق واضح قبل البداية</div></div><div className="hero-visual"><img src={heroImage} alt="دهانات وديكورات داخلية بلمسة فنية" width="900" height="506" fetchPriority="high" decoding="async" sizes="(max-width: 767px) 100vw, 58vw" /><div className="hero-caption"><span className="caption-line"></span><span>تفاصيل تصنع الفرق</span></div><div className="floating-stamp"><span>جدة</span><small>والرياض<br />بكل عناية</small></div></div></div></section>
-
-        <section className="trust-bar"><div className="container trust-grid"><div className="trust-intro"><span>لماذا لمسة فن؟</span><strong>شغل مرتب.<br />نتيجة تفرحك.</strong></div><div className="trust-item"><span className="trust-icon"><Clock3 size={22} /></span><div><strong>موعد واضح</strong><p>نلتزم بالوقت المتفق عليه</p></div></div><div className="trust-item"><span className="trust-icon"><HomeIcon size={22} /></span><div><strong>نظافة في التنفيذ</strong><p>نحمي المكان ونرتبه بعد الشغل</p></div></div><div className="trust-item"><span className="trust-icon"><Star size={22} /></span><div><strong>لمسة من ذوقك</strong><p>نسمع رغبتك قبل أن نقترح</p></div></div></div></section>
-
-        <section id="services" className="section-padding services-section"><div className="container"><div className="section-heading"><div><span className="section-kicker">ما الذي نقدمه</span><h2>من جدار عادي<br /><span>إلى مساحة لها شخصية.</span></h2></div><p>سواء كنت تجدد غرفة واحدة أو تستعد لبيت جديد، نساعدك على اختيار اللمسة التي تناسبك وتعيش معك.</p></div><div className="services-grid">{services.map((service, index) => <article className={`service-card ${index === 1 ? "service-featured" : ""}`} key={service.title}><div className="service-number">0{index + 1}</div><div className="service-icon">{service.icon}</div><h3>{service.title}</h3><p>{service.text}</p><a href={whatsapp} target="_blank" rel="noreferrer" className="card-link">اسأل عن الخدمة <ArrowLeft size={16} /></a></article>)}</div></div></section>
-
-        <section id="riyadh-services" className="regional-services-section"><div className="container"><div className="regional-heading"><span className="section-kicker">نخدم جدة والرياض</span><h2>خدمات تشطيب وديكور<br /><span>بعناوين واضحة وكبيرة.</span></h2><p>اختر الخدمة التي تحتاجها، ثم تواصل معنا مباشرة عبر الاتصال أو واتساب لتنسيق المعاينة والتنفيذ.</p></div><ul className="regional-services-grid">{regionalServices.map((service, index) => <li key={service}><span className="regional-number">{String(index + 1).padStart(2, "0")}</span><h3>{service}</h3><span className="regional-arrow" aria-hidden="true">←</span></li>)}</ul></div></section>
-
-        <section id="approach" className="approach-section"><div className="container approach-grid"><div className="approach-image"><img src={livingRoomImage} alt="جدار بلمسة ديكور عصرية" width="760" height="570" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw" /><div className="color-swatches"><span style={{background: "#c88669"}}></span><span style={{background: "#d7c2a2"}}></span><span style={{background: "#244d4b"}}></span><span style={{background: "#f5eee3"}}></span></div></div><div className="approach-copy"><span className="section-kicker">أسلوبنا في الشغل</span><h2>ذوقك أولًا،<br /><span>والتفاصيل علينا.</span></h2><p>الدهان ليس مجرد لون. هو إحساس الغرفة، طريقة انعكاس الضوء، والفرق الذي تشعر به كل يوم. لذلك نبدأ بالاستماع، ثم نرتب الخطوات وننفذ بهدوء.</p><div className="approach-list"><div><span className="list-check"><Check size={16} /></span><span><strong>نقترح بوضوح</strong><small>بدون تعقيد أو خيارات مربكة.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>ننّفذ بنظافة</strong><small>نحافظ على أثاثك وأرضياتك.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>نترك أثرًا جميلًا</strong><small>تشطيب يبان من أول نظرة.</small></span></div></div></div></div></section>
-
-        <section id="work" className="section-padding work-section"><div className="container"><div className="work-heading"><div><span className="section-kicker">رحلة بسيطة</span><h2>خلّ البداية<br /><span>علينا.</span></h2></div><p>كل ما نحتاجه صورة للمكان وفكرة بسيطة في بالك. والباقي نرتبه معك.</p></div><div className="steps-grid">{steps.map(step => <div className="step" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div></div></section>
-
-        <section id="gallery-riyadh" className="section-padding gallery-section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="section-kicker">معرض الأعمال</span>
-                <h2>ديكورات الرياض<br /><span>نماذج تصاميم وإلهام لبيتك.</span></h2>
+        <section className="hero-section">
+          <div className="container hero-grid">
+            <div className="hero-copy">
+              <div className="eyebrow"><span className="eyebrow-dot"></span> واجهتك أول إعلان عنك</div>
+              <h1>خلّ علامتك<br /><em>تُرى.</em></h1>
+              <p className="hero-lead">لمسة فن للدعاية والإعلان تنفذ اللوحات والواجهات والحروف والمطبوعات التي تجعل نشاطك حاضرًا ولا يُنسى.</p>
+              <div className="hero-actions">
+                <a href={whatsapp} target="_blank" rel="noreferrer" className="primary-button"><MessageCircle size={20} /> اطلب عرضك عبر واتساب <ArrowLeft size={18} /></a>
+                <a href={`tel:${internationalPhone}`} className="text-button"><Phone size={17} /> أو اتصل مباشرة</a>
               </div>
-              <p>نستعرض هنا نماذج من أحدث صيحات الديكور والدهانات العالمية التي ننفذها باحترافية، حيث يحرص معلم ديكورات الرياض على محاكاة هذه التصاميم بأعلى جودة.</p>
+              <div className="hero-note"><Check size={16} /> تصميم وتنفيذ وتركيب باحترافية</div>
             </div>
-            <div className="gallery-grid">
-              <div className="gallery-item">
-                <img src="https://images.pexels.com/photos/6585598/pexels-photo-6585598.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تنفيذ دهانات داخلية عصرية" loading="lazy" decoding="async" />
-                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
-              </div>
-              <div className="gallery-item">
-                <img src="https://images.pexels.com/photos/6492397/pexels-photo-6492397.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تركيب بديل رخام وشيبورد" loading="lazy" decoding="async" />
-                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
-              </div>
-              <div className="gallery-item">
-                <img src="https://images.pexels.com/photos/7061662/pexels-photo-7061662.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تشطيبات وديكورات جدران راقية" loading="lazy" decoding="async" />
-                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
-              </div>
-              <div className="gallery-item">
-                <img src="https://images.pexels.com/photos/6758532/pexels-photo-6758532.jpeg?auto=compress&cs=tinysrgb&w=600" alt="معلم ديكورات الرياض - تصميم خلفيات شاشة TV" loading="lazy" decoding="async" />
-                <div className="gallery-overlay"><span>معلم ديكورات الرياض</span></div>
-              </div>
+            <div className="hero-visual">
+              <img src={heroImage} alt="واجهة مكتب عصرية تمثل خدمات لمسة فن للدعاية والإعلان" width="900" height="620" fetchPriority="high" decoding="async" sizes="(max-width: 767px) 100vw, 58vw" />
+              <div className="hero-caption"><span className="caption-line"></span><span>إعلانك يبدأ من الواجهة</span></div>
+              <div className="floating-stamp"><span>لمسة</span><small>فن<br />للإعلان</small></div>
             </div>
           </div>
         </section>
 
-        <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تغيّر المكان؟</span><h2>أرسل لنا صورة،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا الآن وخذ رأيًا سريعًا يناسب مساحتك في جدة أو الرياض.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
+        <section className="trust-bar">
+          <div className="container trust-grid">
+            <div className="trust-intro"><span>لماذا يختارنا أصحاب الأنشطة؟</span><strong>فكرة واضحة.<br />تنفيذ يلفت.</strong></div>
+            {benefits.map((benefit) => <div className="trust-item" key={benefit.title}><span className="trust-icon">{benefit.icon}</span><div><strong>{benefit.title}</strong><p>{benefit.text}</p></div></div>)}
+          </div>
+        </section>
+
+        <section id="services" className="section-padding services-section">
+          <div className="container">
+            <div className="section-heading"><div><span className="section-kicker">خدماتنا الإعلانية</span><h2>من فكرة عابرة<br /><span>إلى حضور واضح.</span></h2></div><p>كل ما تحتاجه علامتك لتظهر بشكل احترافي أمام عملائك، من الواجهة الخارجية إلى آخر مطبوعة.</p></div>
+            <div className="services-grid">{services.map((service, index) => <article className={`service-card ${index === 1 ? "service-featured" : ""}`} key={service.title}><div className="service-number">0{index + 1}</div><div className="service-icon">{service.icon}</div><h3>{service.title}</h3><p>{service.text}</p><a href={whatsapp} target="_blank" rel="noreferrer" className="card-link">اسأل عن الخدمة <ArrowLeft size={16} /></a></article>)}</div>
+          </div>
+        </section>
+
+        <section id="signage" className="regional-services-section">
+          <div className="container">
+            <div className="regional-heading"><span className="section-kicker">اللوحات والواجهات الخارجية</span><h2>خلّ واجهتك<br /><span>تتكلم عنك.</span></h2><p>كلادنج مقاوم للعوامل الجوية، حروف بارزة مضيئة وغير مضيئة، زنكور، واستيل ذهبي وفضي بتصاميم عصرية.</p></div>
+            <div className="feature-list"><div><span>01</span><h3>تصميم وتركيب الكلادنج</h3><p>أشكال وألوان حديثة تمنح الواجهة حماية ومظهرًا احترافيًا.</p></div><div><span>02</span><h3>حروف بارزة وزنكور</h3><p>متانة وجودة تدوم طويلًا مع وضوح الاسم ليلًا ونهارًا.</p></div><div><span>03</span><h3>استيل ذهبي وفضي</h3><p>فخامة ورقي يرفعان جمالية واجهة المتجر أو المكتب.</p></div></div>
+          </div>
+        </section>
+
+        <section id="print" className="approach-section">
+          <div className="container approach-grid"><div className="approach-image"><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59e479?auto=format&fit=crop&w=1000&q=80" alt="الطباعة الرقمية والمطبوعات الإعلانية من لمسة فن" width="900" height="620" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw" /><div className="color-swatches"><span style={{ background: "#f2a900" }}></span><span style={{ background: "#e9513d" }}></span><span style={{ background: "#0f2438" }}></span><span style={{ background: "#f4f0e7" }}></span></div></div><div className="approach-copy"><span className="section-kicker">الطباعة الرقمية والمطبوعات</span><h2>اطبع رسالتك،<br /><span>بجودة تُلاحظ.</span></h2><p>نجهز البنرات والفليكس والاستيكرات ورول أب وبوب أب ولوحات الأكريليك بدقة عالية، لتظهر رسالتك بألوان واضحة وتفاصيل مرتبة.</p><div className="approach-list"><div><span className="list-check"><Check size={16} /></span><span><strong>بنرات وفليكس</strong><small>للوحات والمناسبات والحملات.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>استيكرات متنوعة</strong><small>للزجاج والسيارات والمنتجات.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>رول أب وأكريليك</strong><small>تجهيز أنيق للمعارض والمكاتب.</small></span></div></div></div></div>
+        </section>
+
+        <section id="why-us" className="section-padding work-section">
+          <div className="container"><div className="work-heading"><div><span className="section-kicker">لماذا لمسة فن؟</span><h2>إعلانك يستحق<br /><span>شغلًا يليق به.</span></h2></div><p>نحوّل احتياجك إلى حل إعلاني واضح، بخامات ممتازة واهتمام بكل تفصيلة.</p></div><div className="why-grid"><div><Target size={25} /><h3>دقة في التصميم والتنفيذ</h3><p>نراجع المقاس والخامة والتفاصيل قبل بداية العمل.</p></div><div><Clock3 size={25} /><h3>التزام تام بالمواعيد</h3><p>نحدد خطوات واضحة ونحافظ على وقتك وموعد افتتاحك.</p></div><div><Star size={25} /><h3>أسعار تنافسية</h3><p>خيارات متعددة تناسب احتياجك دون التنازل عن الجودة.</p></div></div></div>
+        </section>
+
+        <section id="work" className="section-padding gallery-section"><div className="container"><div className="section-heading"><div><span className="section-kicker">نماذج وإلهام</span><h2>أعمال تترك<br /><span>انطباعًا أول.</span></h2></div><p>من الهوية البصرية إلى الواجهة المطبوعة، نصمم حضورًا يجعل علامتك أقرب إلى عملائها.</p></div><div className="gallery-grid">{gallery.map((item) => <div className="gallery-item" key={item.src}><img src={item.src} alt={item.alt} loading="lazy" decoding="async" /><div className="gallery-overlay"><span>لمسة فن للدعاية والإعلان</span><ChevronLeft size={20} /></div></div>)}</div></div></section>
+
+        <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تلفت الأنظار؟</span><h2>أرسل فكرتك،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا للاستفسار وطلب عرض سعر مناسب لنشاطك.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-inner"><a href="#home" className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>دهانات وديكورات جدة والرياض</small></span></a><p>نلوّن المساحات بما يشبهك.</p><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> واتساب</a><a href={`tel:${internationalPhone}`}><Phone size={16} /> اتصال</a><a href="#home"><ArrowUpLeft size={16} /> للأعلى</a></div></div><div className="container copyright"><span>© {new Date().getFullYear()} لمسة فن. جميع الحقوق محفوظة.</span><span className="location"><MapPin size={14} /> جدة والرياض، المملكة العربية السعودية</span></div></footer>
+      <footer className="site-footer"><div className="container footer-inner"><a href="#home" className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>للدعاية والإعلان</small></span></a><p>نصنع حضور علامتك من أول نظرة.</p><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> واتساب</a><a href={`tel:${internationalPhone}`}><Phone size={16} /> اتصال</a><a href="#home"><ArrowLeft size={16} /> للأعلى</a></div></div><div className="container copyright"><span>© {new Date().getFullYear()} لمسة فن للدعاية والإعلان. جميع الحقوق محفوظة.</span><span className="location"><MapPin size={14} /> نخدمكم في المملكة العربية السعودية</span></div></footer>
       <div className="floating-contact"><a href={whatsapp} target="_blank" rel="noreferrer" aria-label="تواصل عبر واتساب"><MessageCircle size={25} /></a><a href={`tel:${internationalPhone}`} aria-label="اتصال مباشر"><Phone size={22} /></a></div>
     </div>
   );
