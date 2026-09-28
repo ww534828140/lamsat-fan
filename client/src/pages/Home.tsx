@@ -142,6 +142,20 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section-links-strip" aria-label="روابط أقسام الموقع">
+          <div className="container">
+            <div className="section-links-heading"><span>تصفح خدمات لمسة فن</span><strong>اختر القسم الذي تريد الوصول إليه</strong></div>
+            <nav className="section-links-grid" aria-label="روابط الأقسام الداخلية">
+              <a href="#services"><span>01</span><strong>كل الخدمات</strong><ArrowLeft size={16} /></a>
+              <a href="#signage"><span>02</span><strong>اللوحات والواجهات</strong><ArrowLeft size={16} /></a>
+              <a href="#print"><span>03</span><strong>الطباعة والمطبوعات</strong><ArrowLeft size={16} /></a>
+              <a href="#why-us"><span>04</span><strong>لماذا لمسة فن؟</strong><ArrowLeft size={16} /></a>
+              <a href="#work"><span>05</span><strong>أعمالنا وإلهام</strong><ArrowLeft size={16} /></a>
+              <a href="#contact"><span>06</span><strong>تواصل معنا</strong><ArrowLeft size={16} /></a>
+            </nav>
+          </div>
+        </section>
+
         <section id="services" className="section-padding services-section">
           <div className="container">
             <div className="section-heading"><div><span className="section-kicker">خدماتنا الإعلانية</span><h2>من فكرة عابرة<br /><span>إلى حضور واضح.</span></h2></div><p>كل ما تحتاجه علامتك لتظهر بشكل احترافي أمام عملائك، من الواجهة الخارجية إلى آخر مطبوعة.</p></div>

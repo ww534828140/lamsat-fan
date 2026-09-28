@@ -61,13 +61,13 @@
 
 # روابط أقسام Google Ads
 
-- [x] الخدمات: `https://lamsatfan.lol/#services`
-- [x] خدمات الرياض: `https://lamsatfan.lol/#riyadh-services`
-- [x] أسلوبنا: `https://lamsatfan.lol/#approach`
-- [x] لمساتنا: `https://lamsatfan.lol/#work`
+- [x] كل الخدمات: `https://lamsatfan.lol/#services`
+- [x] اللوحات والواجهات: `https://lamsatfan.lol/#signage`
+- [x] الطباعة والمطبوعات: `https://lamsatfan.lol/#print`
+- [x] لماذا لمسة فن: `https://lamsatfan.lol/#why-us`
+- [x] أعمالنا وإلهام: `https://lamsatfan.lol/#work`
 - [x] تواصل معنا: `https://lamsatfan.lol/#contact`
-- [x] أعمال الرياض: `https://lamsatfan.lol/#gallery-riyadh`
-- [x] التحقق من روابط الأقسام في كود الصفحة وتحديث التمرير السلس.
+- [x] التحقق من روابط الأقسام الحالية وتحديث التمرير السلس.
 
 # ملاحظات تحقق Google
 
@@ -83,3 +83,5 @@
 - [x] تحديث رقم الاتصال وواتساب إلى 0583099153 بصيغة دولية صحيحة.
 - [x] تحديث العنوان والوصف والكلمات المفتاحية وبيانات LocalBusiness إلى نشاط الدعاية والإعلان.
 - [x] نجاح بناء الإنتاج واختبارات Vitest ومعاينة الهاتف بعد إعادة التوجيه.
+
+- [x] إضافة روابط داخلية واضحة لأقسام الموقع لاستخدام الزوار وروابط أقسام Google Ads.
