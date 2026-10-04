@@ -86,13 +86,17 @@
 
 - [x] إضافة روابط داخلية واضحة لأقسام الموقع لاستخدام الزوار وروابط أقسام Google Ads.
 
-- [ ] نقل الموقع من Manus إلى GitHub Pages مجانًا وربطه بالنطاق lamsatfan.lol بعد التحقق من صلاحيات GitHub.
+- [x] نقل الموقع من Manus إلى GitHub Pages مجانًا وربطه بالنطاق lamsatfan.lol بعد التحقق من صلاحيات GitHub.
 
 - [x] إنشاء مستودع GitHub عام ورفع كود الموقع.
 - [x] إضافة Workflow للبناء وملف CNAME للنطاق lamsatfan.lol.
 - [x] تجهيز ورفع النسخة static إلى فرع gh-pages.
-- [ ] تفعيل GitHub Pages من Settings > Pages بسبب نقص صلاحية API الحالية.
-- [ ] تحديث DNS للنطاق بعد تفعيل Pages والتحقق من HTTPS.
+- [x] تفعيل GitHub Pages من Settings > Pages بسبب نقص صلاحية API الحالية.
+- [x] تحديث DNS للنطاق بعد تفعيل Pages والتحقق من HTTPS.
+
+- [x] تحويل روابط الأقسام إلى صفحات HTML مستقلة فعلية بدل أقسام مدمجة داخل الصفحة الرئيسية.
+- [x] إضافة صفحات `services.html` و`signage.html` و`print.html` و`why-us.html` و`work.html` و`contact.html`.
+- [x] التحقق من أن الصفحات المستقلة تعيد 200 وتظهر بعناوين SEO منفصلة على النطاق.
 
 - [x] إضافة صورة حقيقية من أعمال اللوحات المضيئة إلى معرض الأعمال.
 - [x] تحسين الصورة إلى WebP بحجم 182KB وربطها محليًا لتعمل على GitHub Pages.

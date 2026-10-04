@@ -157,31 +157,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="section-padding services-section">
-          <div className="container">
-            <div className="section-heading"><div><span className="section-kicker">خدماتنا الإعلانية</span><h2>من فكرة عابرة<br /><span>إلى حضور واضح.</span></h2></div><p>كل ما تحتاجه علامتك لتظهر بشكل احترافي أمام عملائك، من الواجهة الخارجية إلى آخر مطبوعة.</p></div>
-            <div className="services-grid">{services.map((service, index) => <article className={`service-card ${index === 1 ? "service-featured" : ""}`} key={service.title}><div className="service-number">0{index + 1}</div><div className="service-icon">{service.icon}</div><h3>{service.title}</h3><p>{service.text}</p><a href={whatsapp} target="_blank" rel="noreferrer" className="card-link">اسأل عن الخدمة <ArrowLeft size={16} /></a></article>)}</div>
+        <section className="home-summary section-padding">
+          <div className="container home-summary-inner">
+            <span className="section-kicker">تصفح الموقع</span>
+            <h2>كل خدمة لها صفحة<br /><span>مستقلة وواضحة.</span></h2>
+            <p>اختر القسم المناسب لمشاهدة التفاصيل والصور وطلب عرض سعر مباشر.</p>
+            <a href="/services.html" className="primary-button">استكشف جميع الخدمات <ArrowLeft size={18} /></a>
           </div>
         </section>
-
-        <section id="signage" className="regional-services-section">
-          <div className="container">
-            <div className="regional-heading"><span className="section-kicker">اللوحات والواجهات الخارجية</span><h2>خلّ واجهتك<br /><span>تتكلم عنك.</span></h2><p>كلادنج مقاوم للعوامل الجوية، حروف بارزة مضيئة وغير مضيئة، زنكور، واستيل ذهبي وفضي بتصاميم عصرية.</p></div>
-            <div className="feature-list"><div><span>01</span><h3>تصميم وتركيب الكلادنج</h3><p>أشكال وألوان حديثة تمنح الواجهة حماية ومظهرًا احترافيًا.</p></div><div><span>02</span><h3>حروف بارزة وزنكور</h3><p>متانة وجودة تدوم طويلًا مع وضوح الاسم ليلًا ونهارًا.</p></div><div><span>03</span><h3>استيل ذهبي وفضي</h3><p>فخامة ورقي يرفعان جمالية واجهة المتجر أو المكتب.</p></div></div>
-          </div>
-        </section>
-
-        <section id="print" className="approach-section">
-          <div className="container approach-grid"><div className="approach-image"><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59e479?auto=format&fit=crop&w=1000&q=80" alt="الطباعة الرقمية والمطبوعات الإعلانية من لمسة فن" width="900" height="620" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, 50vw" /><div className="color-swatches"><span style={{ background: "#f2a900" }}></span><span style={{ background: "#e9513d" }}></span><span style={{ background: "#0f2438" }}></span><span style={{ background: "#f4f0e7" }}></span></div></div><div className="approach-copy"><span className="section-kicker">الطباعة الرقمية والمطبوعات</span><h2>اطبع رسالتك،<br /><span>بجودة تُلاحظ.</span></h2><p>نجهز البنرات والفليكس والاستيكرات ورول أب وبوب أب ولوحات الأكريليك بدقة عالية، لتظهر رسالتك بألوان واضحة وتفاصيل مرتبة.</p><div className="approach-list"><div><span className="list-check"><Check size={16} /></span><span><strong>بنرات وفليكس</strong><small>للوحات والمناسبات والحملات.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>استيكرات متنوعة</strong><small>للزجاج والسيارات والمنتجات.</small></span></div><div><span className="list-check"><Check size={16} /></span><span><strong>رول أب وأكريليك</strong><small>تجهيز أنيق للمعارض والمكاتب.</small></span></div></div></div></div>
-        </section>
-
-        <section id="why-us" className="section-padding work-section">
-          <div className="container"><div className="work-heading"><div><span className="section-kicker">لماذا لمسة فن؟</span><h2>إعلانك يستحق<br /><span>شغلًا يليق به.</span></h2></div><p>نحوّل احتياجك إلى حل إعلاني واضح، بخامات ممتازة واهتمام بكل تفصيلة.</p></div><div className="why-grid"><div><Target size={25} /><h3>دقة في التصميم والتنفيذ</h3><p>نراجع المقاس والخامة والتفاصيل قبل بداية العمل.</p></div><div><Clock3 size={25} /><h3>التزام تام بالمواعيد</h3><p>نحدد خطوات واضحة ونحافظ على وقتك وموعد افتتاحك.</p></div><div><Star size={25} /><h3>أسعار تنافسية</h3><p>خيارات متعددة تناسب احتياجك دون التنازل عن الجودة.</p></div></div></div>
-        </section>
-
-        <section id="work" className="section-padding gallery-section"><div className="container"><div className="section-heading"><div><span className="section-kicker">نماذج وإلهام</span><h2>أعمال تترك<br /><span>انطباعًا أول.</span></h2></div><p>من الهوية البصرية إلى الواجهة المطبوعة، نصمم حضورًا يجعل علامتك أقرب إلى عملائها.</p></div><div className="gallery-grid">{gallery.map((item) => <div className="gallery-item" key={item.src}><img src={item.src} alt={item.alt} loading="lazy" decoding="async" /><div className="gallery-overlay"><span>لمسة فن للدعاية والإعلان</span><ChevronLeft size={20} /></div></div>)}</div></div></section>
-
-        <section id="contact" className="contact-section"><div className="container contact-inner"><div><span className="section-kicker light">جاهز تلفت الأنظار؟</span><h2>أرسل فكرتك،<br /><em>ونبدأ من هناك.</em></h2><p>تواصل معنا للاستفسار وطلب عرض سعر مناسب لنشاطك.</p></div><div className="contact-actions"><a href={whatsapp} target="_blank" rel="noreferrer" className="contact-button light-button"><MessageCircle size={22} /> راسلنا على واتساب <ArrowLeft size={18} /></a><a href={`tel:${internationalPhone}`} className="contact-phone"><Phone size={18} /> {phone}</a></div><div className="contact-pattern"><span></span><span></span><span></span></div></div></section>
       </main>
 
       <footer className="site-footer"><div className="container footer-inner"><a href="#home" className="brand footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span><strong>لمسة فن</strong><small>للدعاية والإعلان</small></span></a><p>نصنع حضور علامتك من أول نظرة.</p><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer"><MessageCircle size={16} /> واتساب</a><a href={`tel:${internationalPhone}`}><Phone size={16} /> اتصال</a><a href="#home"><ArrowLeft size={16} /> للأعلى</a></div></div><div className="container copyright"><span>© {new Date().getFullYear()} لمسة فن للدعاية والإعلان. جميع الحقوق محفوظة.</span><span className="location"><MapPin size={14} /> نخدمكم في المملكة العربية السعودية</span></div></footer>
