@@ -71,6 +71,7 @@ const steps = [
 ];
 
 const gallery = [
+  { src: "/assets/lamset-fan-work-sign.webp", alt: "لوحة حروف مضيئة ملونة منفذة من أعمال لمسة فن للدعاية والإعلان" },
   { src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80", alt: "تصميم هوية بصرية ولمسات دعائية عصرية" },
   { src: "https://images.unsplash.com/photo-1612815154858-60aa4c59e479?auto=format&fit=crop&w=900&q=80", alt: "طباعة رقمية احترافية لمطبوعات إعلانية" },
   { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80", alt: "لوحة واجهة متجر بتصميم واضح وجذاب" },
