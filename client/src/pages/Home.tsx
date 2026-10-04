@@ -98,12 +98,12 @@ export default function Home() {
             <span><strong>لمسة فن</strong><small>للدعاية والإعلان</small></span>
           </a>
           <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="التنقل الرئيسي">
-            <a href="#services" onClick={closeMenu}>خدماتنا</a>
-            <a href="#signage" onClick={closeMenu}>اللوحات والواجهات</a>
-            <a href="#print" onClick={closeMenu}>الطباعة</a>
-            <a href="#why-us" onClick={closeMenu}>لماذا لمسة فن؟</a>
-            <a href="#work" onClick={closeMenu}>أعمالنا</a>
-            <a href="#contact" onClick={closeMenu}>تواصل معنا</a>
+            <a href="/services.html" onClick={closeMenu}>خدماتنا</a>
+            <a href="/signage.html" onClick={closeMenu}>اللوحات والواجهات</a>
+            <a href="/print.html" onClick={closeMenu}>الطباعة</a>
+            <a href="/why-us.html" onClick={closeMenu}>لماذا لمسة فن؟</a>
+            <a href="/work.html" onClick={closeMenu}>أعمالنا</a>
+            <a href="/contact.html" onClick={closeMenu}>تواصل معنا</a>
           </nav>
           <div className="desktop-actions">
             <a href={`tel:${internationalPhone}`} className="phone-link"><Phone size={17} /> اتصل الآن</a>
@@ -147,12 +147,12 @@ export default function Home() {
           <div className="container">
             <div className="section-links-heading"><span>تصفح خدمات لمسة فن</span><strong>اختر القسم الذي تريد الوصول إليه</strong></div>
             <nav className="section-links-grid" aria-label="روابط الأقسام الداخلية">
-              <a href="#services"><span>01</span><strong>كل الخدمات</strong><ArrowLeft size={16} /></a>
-              <a href="#signage"><span>02</span><strong>اللوحات والواجهات</strong><ArrowLeft size={16} /></a>
-              <a href="#print"><span>03</span><strong>الطباعة والمطبوعات</strong><ArrowLeft size={16} /></a>
-              <a href="#why-us"><span>04</span><strong>لماذا لمسة فن؟</strong><ArrowLeft size={16} /></a>
-              <a href="#work"><span>05</span><strong>أعمالنا وإلهام</strong><ArrowLeft size={16} /></a>
-              <a href="#contact"><span>06</span><strong>تواصل معنا</strong><ArrowLeft size={16} /></a>
+              <a href="/services.html"><span>01</span><strong>كل الخدمات</strong><ArrowLeft size={16} /></a>
+              <a href="/signage.html"><span>02</span><strong>اللوحات والواجهات</strong><ArrowLeft size={16} /></a>
+              <a href="/print.html"><span>03</span><strong>الطباعة والمطبوعات</strong><ArrowLeft size={16} /></a>
+              <a href="/why-us.html"><span>04</span><strong>لماذا لمسة فن؟</strong><ArrowLeft size={16} /></a>
+              <a href="/work.html"><span>05</span><strong>أعمالنا وإلهام</strong><ArrowLeft size={16} /></a>
+              <a href="/contact.html"><span>06</span><strong>تواصل معنا</strong><ArrowLeft size={16} /></a>
             </nav>
           </div>
         </section>

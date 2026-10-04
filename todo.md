@@ -61,13 +61,13 @@
 
 # روابط أقسام Google Ads
 
-- [x] كل الخدمات: `https://lamsatfan.lol/#services`
-- [x] اللوحات والواجهات: `https://lamsatfan.lol/#signage`
-- [x] الطباعة والمطبوعات: `https://lamsatfan.lol/#print`
-- [x] لماذا لمسة فن: `https://lamsatfan.lol/#why-us`
-- [x] أعمالنا وإلهام: `https://lamsatfan.lol/#work`
-- [x] تواصل معنا: `https://lamsatfan.lol/#contact`
-- [x] التحقق من روابط الأقسام الحالية وتحديث التمرير السلس.
+- [x] كل الخدمات: `https://lamsatfan.lol/services.html`
+- [x] اللوحات والواجهات: `https://lamsatfan.lol/signage.html`
+- [x] الطباعة والمطبوعات: `https://lamsatfan.lol/print.html`
+- [x] لماذا لمسة فن: `https://lamsatfan.lol/why-us.html`
+- [x] أعمالنا وإلهام: `https://lamsatfan.lol/work.html`
+- [x] تواصل معنا: `https://lamsatfan.lol/contact.html`
+- [x] التحقق من روابط الصفحات المستقلة وبناء ملفات HTML منفصلة.
 
 # ملاحظات تحقق Google
 
