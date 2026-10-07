@@ -18,7 +18,8 @@ import {
   Target,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { redirectMobileToCall } from "@/lib/mobileAutoCall";
 
 const phone = "0583099153";
 const internationalPhone = "+966583099153";
@@ -80,6 +81,10 @@ const gallery = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    redirectMobileToCall(internationalPhone);
+  }, []);
   const closeMenu = () => setMenuOpen(false);
 
   return (

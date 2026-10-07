@@ -1,4 +1,6 @@
 import { ArrowRight, BadgeCheck, Check, Clock3, MapPin, MessageCircle, Phone, ShieldCheck, Star, Target } from "lucide-react";
+import { useEffect } from "react";
+import { redirectMobileToCall } from "@/lib/mobileAutoCall";
 
 const phone = "0583099153";
 const internationalPhone = "+966583099153";
@@ -96,6 +98,10 @@ export default function SectionPage() {
   const key = (window.location.pathname.split("/").pop() || "services.html") as PageKey;
   const page = pages[key] || pages["services.html"];
   const titleLines = page.title.split("\n");
+
+  useEffect(() => {
+    redirectMobileToCall(internationalPhone);
+  }, []);
 
   return (
     <div dir="rtl" className="site-root section-page">
